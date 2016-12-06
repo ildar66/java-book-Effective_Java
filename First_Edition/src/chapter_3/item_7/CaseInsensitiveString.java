@@ -13,7 +13,7 @@ public final class CaseInsensitiveString {
             throw new NullPointerException();
         this.s = s;
     }
-
+/*
     //Broken - violates symmetry!
     public boolean equals(Object o) {
         if (o instanceof CaseInsensitiveString)
@@ -21,6 +21,12 @@ public final class CaseInsensitiveString {
         if (o instanceof String) // One-way interoperability!
             return s.equalsIgnoreCase((String) o);
         return false;
+    }*/
+
+    public boolean equals(Object o) {
+        return o instanceof CaseInsensitiveString &&
+                ((CaseInsensitiveString) o).s.equalsIgnoreCase(s);
     }
+
     // ... // Remainder omitted
 }
