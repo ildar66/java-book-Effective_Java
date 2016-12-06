@@ -20,6 +20,12 @@ public class ColorPoint extends Point {
     }*/
 
     //Broken - violates transitivity.
+    /*
+    This approach does provide symmetry, but at the expense of transitivity:
+    ColorPoint p1 = new ColorPoint(1, 2, Color.RED);
+    Point p2 = new Point(1, 2);
+    ColorPoint p3 = new ColorPoint(1, 2, Color.BLUE);
+    */
     public boolean equals(Object o) {
         if (!(o instanceof Point))
             return false;
