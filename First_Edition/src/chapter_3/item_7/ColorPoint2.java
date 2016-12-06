@@ -2,6 +2,10 @@ package chapter_3.item_7;
 
 import java.awt.*;
 
+/**
+ * It turns out that this is a fundamental problem of equivalence relations in object-oriented languages.
+ * There is simply no way to extend an instantiable class and add an aspect while preserving the equals contract.
+ */
 // Adds an aspect without violating the equals contract.
 public class ColorPoint2 {
 
