@@ -24,11 +24,31 @@ public class HashTable implements Cloneable {
         }
 
         // Recursively copy the linked list headed by this Entry
+        /*
+         * Iteratively copy the linked list headed by this Entry
+         * The deep-copy method on Entry invokes itself recursively to copy the entire linked list headed by the entry.
+         * While this technique is cute and works fine if the buckets aren't too long, it is not a good way
+         * to clone a linked list because it consumes one stack frame for each element in the list.
+
         Entry deepCopy() {
             return new Entry(key, value, next == null ? null : next.deepCopy());
         }
+        */
+
+        // Iteratively copy the linked list headed by this Entry
+        Entry deepCopy() {
+            Entry result = new Entry(key, value, next);
+            for (Entry p = result; p.next != null; p = p.next)
+                p.next = new Entry(p.next.key, p.next.value, p.next.next);
+            return result;
+        }
+
     }
 
+    /*
+     * @return
+     * @throws CloneNotSupportedException
+    */
     public Object clone() throws CloneNotSupportedException {
         HashTable result = (HashTable) super.clone();
         result.buckets = new Entry[buckets.length];
