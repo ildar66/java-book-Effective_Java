@@ -69,5 +69,22 @@ public final class PhoneNumber {
         return 0; // All fields are equal
     }
 
+/*
+*   This trick works fine here but should be used with extreme caution. Don't do it unless you're
+*       certain that the field in question cannot be negative or, more generally, that the difference
+*       between the lowest and highest possible field values is less than or equal to INTEGER.MAX_VALUE (231-1).
+   public int compareTo(Object o) {
+        PhoneNumber pn = (PhoneNumber)o;
+        // Compare area codes
+        int areaCodeDiff = areaCode - pn.areaCode;
+        if (areaCodeDiff != 0)
+            return areaCodeDiff;
+        // Area codes are equal, compare exchanges
+        int exchangeDiff = exchange - pn.exchange;
+        if (exchangeDiff != 0)
+            return exchangeDiff;
+        // Area codes and exchanges are equal, compare extensions
+        return extension - pn.extension;
+    }*/
     // ... // Remainder omitted
 }
