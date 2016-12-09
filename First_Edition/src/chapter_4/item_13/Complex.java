@@ -4,7 +4,26 @@ package chapter_4.item_13;
  * Many of the example classes in previous items are immutable. One such class is PhoneNumber
  * in Item 8, which has accessors for each attribute but no corresponding mutators. Here is
  * a slightly more complex example:
+ * This class represents a complex number (a number with both real and imaginary parts). In
+ * addition to the standard Object methods, it provides accessors for the real and imaginary
+ * parts and provides the four basic arithmetic operations: addition, subtraction, multiplication,
+ * and division.
  */
+
+/*// Immutable class with static factories instead of constructors
+public class Complex {
+    private final float re;
+    private final float im;
+    private Complex(float re, float im) {
+        this.re = re;
+        this.im = im;
+    }
+    public static Complex valueOf(float re, float im) {
+        return new Complex(re, im);
+    }
+    ... // Remainder unchanged
+}*/
+
 public final class Complex {
 
     private final float re;
