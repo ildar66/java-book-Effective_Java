@@ -23,4 +23,23 @@
  *      Never initialize such a field to a client-provided object reference nor return the object reference from an accessor.
  *      Make defensive copies (Item 24) in contructors, accessors, and readObject methods (Item 56).
  */
+/*
+// Cached, lazily initialized function of an immutable object
+private volatile Foo cachedFooVal = UNLIKELY_FOO_VALUE;
+public Foo foo() {
+    int result = cachedFooVal;
+    if (result == UNLIKELY_FOO_VALUE)
+        result = cachedFooVal = fooValue();
+    return result;
+}
+// Private helper function to calculate our foo value
+private Foo fooValue() { ... }
+ */
+/*
+* Classes should be immutable unless there's a very good reason to make them mutable.
+*
+* If a class cannot be made immutable, you should still limit its mutability as much as possible.
+*
+* Constructors should create fully initialized objects with all of their invariants established
+*/
 package chapter_4.item_13;

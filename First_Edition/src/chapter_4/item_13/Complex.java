@@ -10,20 +10,6 @@ package chapter_4.item_13;
  * and division.
  */
 
-/*// Immutable class with static factories instead of constructors
-public class Complex {
-    private final float re;
-    private final float im;
-    private Complex(float re, float im) {
-        this.re = re;
-        this.im = im;
-    }
-    public static Complex valueOf(float re, float im) {
-        return new Complex(re, im);
-    }
-    ... // Remainder unchanged
-}*/
-
 public final class Complex {
 
     private final float re;
