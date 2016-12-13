@@ -26,6 +26,12 @@ abstract class ExtendedOperation extends Operation2 {
     private final int ordinal = nextOrdinal++;
     private static final Operation2[] VALUES = {LOG, EXP};
 
+    /**
+     * Note that the readResolve methods in the classes just shown are package-private rather than
+     * private. This is necessary because the instances of Operation and ExtendedOperation are,
+     * in fact, instances of anonymous subclasses, so private readResolve methods would have no
+     * effect (Item 57).
+     */
     Object readResolve() throws ObjectStreamException {
         return VALUES[ordinal]; // Canonicalize
     }
