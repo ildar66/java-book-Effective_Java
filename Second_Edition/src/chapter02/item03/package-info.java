@@ -10,5 +10,8 @@
  * *
  * As of release 1.5, there is a third approach to implementing singletons.
  * Simply make an enum type with one element: see {@link chapter02.item03.enumeration.Elvis}
+ * This approach is functionally equivalent to the public field approach, except that it is more concise,
+ * provides the serialization machinery for free,
+ * and provides an ironclad guarantee against multiple instantiation, even in the face of sophisticated serialization or reflection attacks.
  */
 package chapter02.item03;
