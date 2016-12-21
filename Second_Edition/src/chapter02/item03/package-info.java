@@ -7,5 +7,8 @@
  * *
  * Each time a serialized instance is deserialized, a new instance will be created.
  * To prevent this, add readResolve method see {@link chapter02.item03.serializable.Elvis}.
+ * *
+ * As of release 1.5, there is a third approach to implementing singletons.
+ * Simply make an enum type with one element: see {@link chapter02.item03.enumeration.Elvis}
  */
 package chapter02.item03;
