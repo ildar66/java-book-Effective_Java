@@ -1,5 +1,5 @@
 /**
- * Item 2: Consider a builder when faced with many constructor parameters.
+ * Item 2: Consider a builder when faced with many constructor parameters see {@link chapter02.item02.builder.NutritionFacts}.
  * *
  * The telescoping constructor pattern works see {@link chapter02.item02.telescopingconstructor.NutritionFacts},
  * but it is hard to write client code when there are many parameters, and harder still to read it.
