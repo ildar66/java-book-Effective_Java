@@ -14,5 +14,10 @@
  * see {@link chapter03.item08.CaseInsensitiveString}
  * • Transitivity—The third requirement of the equals contract says that if one object is equal to a second
  * and the second object is equal to a third, then the first object must be equal to the third.
+ * *
+ * There is no way to extend an instantiable class and add a value component while preserving the equals contract.
+ * see {@link chapter03.item08.ColorPoint}
+ * *
+ * Broken - violates Liskov substitution principle see {@link chapter03.item08.CounterPointTest}
  */
 package chapter03.item08;
