@@ -19,5 +19,7 @@
  * see {@link chapter03.item08.ColorPoint}
  * *
  * Broken - violates Liskov substitution principle see {@link chapter03.item08.CounterPointTest}
+ * *
+ * Follow the advice of Item 16, “Favor composition over inheritance.” see {@link chapter03.item08.composition.ColorPoint}.
  */
 package chapter03.item08;
