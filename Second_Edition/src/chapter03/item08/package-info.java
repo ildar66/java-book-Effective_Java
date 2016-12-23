@@ -21,5 +21,25 @@
  * Broken - violates Liskov substitution principle see {@link chapter03.item08.CounterPointTest}
  * *
  * Follow the advice of Item 16, “Favor composition over inheritance.” see {@link chapter03.item08.composition.ColorPoint}.
+ * • Consistency—The fourth requirement of the equals contract says that if two objects are equal,
+ * they must remain equal for all time unless one (or both) of them is modified.
+ * In other words, mutable objects can be equal to different objects at different times while immutable objects can’t.
+ * *
+ * Whether or not a class is immutable, do not write an equals method that depends on unreliable resources.
+ * • “Non-nullity”—The final requirement, which in the absence of a name I have taken the liberty of calling “non-nullity,”
+ * says that all objects must be unequal to null.
+ * *
+ * Putting it all together, here’s a recipe for a high-quality equals method:
+ * 1. Use the == operator to check if the argument is a reference to this object.
+ * 2. Use the instanceof operator to check if the argument has the correct type.
+ * 3. Cast the argument to the correct type.
+ * 4. For each “significant” field in the class, check if that field of the argument matches the corresponding field of this object.
+ * 5. When you are finished writing your equals method, ask yourself three questions: Is it symmetric? Is it transitive? Is it consistent?
+ * *
+ * For a concrete example of an equals method constructed according to the above recipe, see PhoneNumber.equals in Item 9.9.
+ * Here are a few final caveats:
+ * • Always override hashCode when you override equals (Item 9).
+ * • Don’t try to be too clever.
+ * • Don’t substitute another type for Object in the equals declaration(Consistent use of the @Override annotation).
  */
 package chapter03.item08;
