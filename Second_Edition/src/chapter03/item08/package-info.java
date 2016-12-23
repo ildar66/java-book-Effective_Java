@@ -12,5 +12,7 @@
  * • Symmetry—The second requirement says that any two objects must agree on whether they are equal.
  * Once you’ve violated the equals contract, you simply don’t know how other objects will behave when confronted with your object.
  * see {@link chapter03.item08.CaseInsensitiveString}
+ * • Transitivity—The third requirement of the equals contract says that if one object is equal to a second
+ * and the second object is equal to a third, then the first object must be equal to the third.
  */
 package chapter03.item08;
