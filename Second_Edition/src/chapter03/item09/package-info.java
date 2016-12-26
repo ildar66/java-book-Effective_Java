@@ -37,5 +37,7 @@
  * 4. When you are finished writing the hashCode method, ask yourself whether
  * equal instances have equal hash codes. Write unit tests to verify your intuition!
  * If equal instances have unequal hash codes, figure out why and fix the problem.
+ * *
+ * Do not be tempted to exclude significant parts of an object from the hash code computation to improve performance.
  */
 package chapter03.item09;
