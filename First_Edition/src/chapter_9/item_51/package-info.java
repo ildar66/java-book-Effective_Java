@@ -14,5 +14,7 @@
  * As a corollary, do not rely on Thread.yield or thread priorities.
  * These facilities are merely hints to the scheduler. They may be used sparingly to improve the quality of service of an already working
  * implementation, but they should never be used to “fix” a program that barely works.
+ * *
+ * Threads should not busy-wait, repeatedly checking a data structure waiting for something to happen. see {@link chapter_9.item_51.WorkQueue}
  */
 package chapter_9.item_51;
