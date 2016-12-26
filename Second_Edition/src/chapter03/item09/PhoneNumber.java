@@ -49,19 +49,20 @@ public final class PhoneNumber {
     }*/
 
     // Lazily initialized, cached hashCode - Page 49
-    // private volatile int hashCode; // (See Item 71)
-    //
-    // @Override public int hashCode() {
-    // int result = hashCode;
-    // if (result == 0) {
-    // result = 17;
-    // result = 31 * result + areaCode;
-    // result = 31 * result + prefix;
-    // result = 31 * result + lineNumber;
-    // hashCode = result;
-    // }
-    // return result;
-    // }
+/*    private volatile int hashCode; // (See Item 71)
+
+    @Override
+    public int hashCode() {
+        int result = hashCode;
+        if (result == 0) {
+            result = 17;
+            result = 31 * result + areaCode;
+            result = 31 * result + prefix;
+            result = 31 * result + lineNumber;
+            hashCode = result;
+        }
+        return result;
+    }*/
 
     public static void main(String[] args) {
         Map<PhoneNumber, String> m = new HashMap<PhoneNumber, String>();
