@@ -1,4 +1,4 @@
-package chapter_3.item_10;
+package chapter03.item11;
 
 /**
  * It is not always sufficient to call clone recursively. For example, suppose you are writing a
@@ -13,7 +13,7 @@ public class HashTable implements Cloneable {
 
     private static class Entry {
 
-        Object key;
+        final Object key;
         Object value;
         Entry next;
 
@@ -26,8 +26,8 @@ public class HashTable implements Cloneable {
         // Recursively copy the linked list headed by this Entry
         /*
          * The deep-copy method on Entry invokes itself recursively to copy the entire linked list headed by the entry.
-         * While this technique is cute and works fine if the buckets aren't too long, it is not a good way
-         * to clone a linked list because it consumes one stack frame for each element in the list.
+         * While this technique is cute and works fine if the buckets aren’t too long, it is not a good way to clone a linked list
+         * because it consumes one stack frame for each element in the list. If the list is long, this could easily cause a stack overflow.
 
         Entry deepCopy() {
             return new Entry(key, value, next == null ? null : next.deepCopy());
@@ -44,27 +44,30 @@ public class HashTable implements Cloneable {
 
     }
 
-    /*
-     * @return
-     * @throws CloneNotSupportedException
-    */
-    public Object clone() throws CloneNotSupportedException {
-        HashTable result = (HashTable) super.clone();
-        result.buckets = new Entry[buckets.length];
-        for (int i = 0; i < buckets.length; i++) {
-            if (buckets[i] != null) {
-                result.buckets[i] = (Entry) buckets[i].deepCopy();
-            }
+    @Override
+    public HashTable clone() {
+        try {
+            HashTable result = (HashTable) super.clone();
+            result.buckets = new Entry[buckets.length];
+            for (int i = 0; i < buckets.length; i++)
+                if (buckets[i] != null)
+                    result.buckets[i] = buckets[i].deepCopy();
+            return result;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
         }
-        return result;
     }
 
 /*
    // Broken - results in shared internal state!
-    public Object clone() throws CloneNotSupportedException {
-        HashTable result = (HashTable) super.clone();
-        result.buckets = (Entry[]) buckets.clone();
-        return result;
+    @Override public HashTable clone() {
+        try {
+            HashTable result = (HashTable) super.clone();
+            result.buckets = (Entry[]) buckets.clone();
+            return result;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }*/
 
     // ... // Remainder omitted
