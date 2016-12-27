@@ -1,3 +1,8 @@
+/**
+ * Note that the above clone method returns PhoneNumber, not Object.
+ * As of release 1.5, it is legal and desirable to do this, because covariant return types were introduced in release 1.5 as part of generics
+ * (never make the client do anything the library can do for the client).
+ */
 // Adding a clone method to PhoneNumber - page 55
 package chapter03.item11;
 
