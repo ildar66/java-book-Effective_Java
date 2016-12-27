@@ -15,6 +15,20 @@
  * The clone architecture is incompatible with normal use of final fields referring to mutable objects,
  * except in cases where the mutable objects may be safely shared between an object and its clone.
  * *
- * It is not always sufficient to call clone recursively. @see {@link chapter03.item11.HashTable}
+ * It is not always sufficient to call clone recursively. @see {@link chapter03.item11.HashTable}.
+ * *
+ * You are better off providing an alternative means of object copying, or simply not providing the capability.
+ * A fine approach to object copying is to provide a copy constructor or copy factory.
+ * A copy constructor is simply a constructor that takes a single argument whose type is the class containing the constructor,
+ * for example,
+ * public Yum(Yum yum);
+ * A copy factory is the static factory analog of a copy constructor:
+ * public static Yum newInstance(Yum yum);
+ * *
+ * Given all of the problems associated with Cloneable, it’s safe to say that other interfaces should not extend it,
+ * and that classes designed for inheritance (Item 17) should not implement it. Because of its many shortcomings, some
+ * expert programmers simply choose never to override the clone method and never to invoke it except, perhaps, to copy arrays.
+ * If you design a class for inheritance, be aware that if you choose not to provide a well-behaved protected clone method,
+ * it will be impossible for subclasses to implement Cloneable.
  */
 package chapter03.item11;
