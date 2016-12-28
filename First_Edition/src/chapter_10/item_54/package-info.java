@@ -13,5 +13,13 @@
  * *
  * you should consider providing a parameterless constructor on nonserializable classes designed for inheritance.
  * @see chapter_10.item_54.Foo
+ * *
+ * Inner classes (Item 18) should rarely, if ever, implement Serializable(default serialized form of an inner class is ill-defined).
+ * A static member class can, however, implement Serializable.
+ * *
+ * To summarize, the ease of implementing Serializable is specious. Unless a class is to be thrown away after a short period of use,
+ * implementing Serializable is a serious commitment that should be made with care. Extra caution is warranted if a class is designed
+ * for inheritance. For such classes, an intermediate design point between implementing Serializable and prohibiting it in subclasses
+ * is to provide an accessible parameterless constructor. This design point permits, but does not require, subclasses to implement Serializable.
  */
 package chapter_10.item_54;
