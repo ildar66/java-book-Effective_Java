@@ -18,5 +18,7 @@
  * *
  * If a class has multiple significant fields, the order in which you compare them is critical.
  * @see chapter03.item12.PhoneNumber
+ * You must start with the most significant field and work your way down.
+ * *
  */
 package chapter03.item12;

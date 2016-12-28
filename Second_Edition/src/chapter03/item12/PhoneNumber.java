@@ -72,7 +72,7 @@ public final class PhoneNumber implements Cloneable, Comparable<PhoneNumber> {
     }
 
     // Works fine, but can be made faster
-    public int compareTo(PhoneNumber pn) {
+/*    public int compareTo(PhoneNumber pn) {
         // Compare area codes
         if (areaCode < pn.areaCode)
             return -1;
@@ -92,8 +92,13 @@ public final class PhoneNumber implements Cloneable, Comparable<PhoneNumber> {
             return 1;
 
         return 0; // All fields are equal
-    }
-/*
+    }*/
+
+    /**
+     * This trick works fine here but should be used with extreme caution.
+     * Don’t use it unless you’re certain the fields in question are non-negative or, more generally,
+     * that the difference between the lowest and highest possible field values is less than or equal to Integer.MAX_VALUE (231-1).
+     */
     public int compareTo(PhoneNumber pn) {
         // Compare area codes
         int areaCodeDiff = areaCode - pn.areaCode;
@@ -107,7 +112,7 @@ public final class PhoneNumber implements Cloneable, Comparable<PhoneNumber> {
 
         // Area codes and prefixes are equal, compare line numbers
         return lineNumber - pn.lineNumber;
-    }*/
+    }
 
     public static void main(String[] args) {
         NavigableSet<PhoneNumber> s = new TreeSet<PhoneNumber>();
