@@ -18,5 +18,19 @@
  * • It can cause stack overflows.
  * *
  * @see chapter_10.item_55.StringList with a reasonable custom serialized form.
+ * *
+ * Before deciding to make a field nontransient, convince yourself that its value is part of the logical state of the object.
+ * *
+ * Regardless of what serialized form you choose, declare an explicit serial version UID in every serializable class you write.
+ * *
+ * To summarize, when you have decided that a class should be serializable (Item 54), think hard
+ * about what the serialized form should be. Only use the default serialized form if it is a
+ * reasonable description of the logical state of the object; otherwise design a custom serialized
+ * form that aptly describes the object. You should allocate as much time to designing the
+ * serialized form of a class as you allocate to designing its exported methods. Just as you cannot
+ * eliminate exported methods from future versions, you cannot eliminate fields from the
+ * serialized form; they must be preserved forever to ensure serialization compatibility.
+ * Choosing the wrong serialized form can have permanent, negative impact on the complexity
+ * and performance of a class.
  */
 package chapter_10.item_55;

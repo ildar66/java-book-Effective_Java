@@ -5,7 +5,13 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-// StringList with a reasonable custom serialized form
+/**
+ * // StringList with a reasonable custom serialized form
+ * Note that the writeObject method invokes defaultWriteObject and the readObject method invokes defaultReadObject,
+ * even though all of StringList's fields are transient.
+ * If all instance fields are transient, it is technically permissible to dispense with invoking defaultWriteObject and defaultReadObject,
+ * but it is not recommended.
+ */
 public class StringList implements Serializable {
 
     private transient int size = 0;
