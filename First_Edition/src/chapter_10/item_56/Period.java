@@ -1,5 +1,8 @@
 package chapter_10.item_56;
 
+import java.io.IOException;
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -33,13 +36,12 @@ public final class Period implements Serializable {
     public String toString() {
         return start + " - " + end;
     }
+
     // ... // Remainder omitted
-/*
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
         // Check that our invariants are satisfied
         if (start.compareTo(end) > 0)
             throw new InvalidObjectException(start + " after " + end);
     }
-*/
 }
