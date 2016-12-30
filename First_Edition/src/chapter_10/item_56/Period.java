@@ -10,6 +10,7 @@ import java.util.Date;
 public final class Period implements Serializable {
 
     //Note also that defensive copying is not possible for final fields.
+    //To use the readObject method, we must make the start and end fields nonfinal.
     private final Date start;
     // private Date start;
     private final Date end;
