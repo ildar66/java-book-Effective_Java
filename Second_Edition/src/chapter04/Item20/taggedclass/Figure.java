@@ -1,5 +1,5 @@
 // Tagged class - vastly inferior to a class hierarchy!
-package chapter04.Item20.taggedclass;
+package chapter04.item20.taggedclass;
 
 class Figure {
 
