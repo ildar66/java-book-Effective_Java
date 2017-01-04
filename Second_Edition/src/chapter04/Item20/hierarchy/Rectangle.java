@@ -1,4 +1,4 @@
-package chapter04.Item20.hierarchy;
+package chapter04.item20.hierarchy;
 
 class Rectangle extends Figure {
 
