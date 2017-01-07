@@ -6,5 +6,6 @@
  * *
  * Generic static factory method {@link chapter05.item27.GenericStaticFactory}
  * *
+ * Generic singleton factory pattern: {@link chapter05.item27.GenericSingletonFactory}
  */
 package chapter05.item27;
