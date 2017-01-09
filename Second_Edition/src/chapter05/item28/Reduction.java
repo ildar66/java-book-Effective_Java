@@ -28,7 +28,7 @@ public class Reduction {
     };
 
     public static void main(String[] args) {
-        // We can use a Number functionto reduce a list of Integer or Double
+        // We can use a Number function to reduce a list of Integer or Double
         List<Integer> intList = Arrays.asList(2, 7, 1, 8, 2, 8, 1, 8, 2, 8);
         System.out.println(reduce(intList, MAX, Integer.MIN_VALUE));
 
