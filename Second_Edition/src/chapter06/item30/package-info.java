@@ -12,5 +12,7 @@
  * *
  * To associate data with enum constants, {@link chapter06.item30.Planet}
  * declare instance fields and write a constructor that takes the data and stores it in the fields.
+ * *
+ * Enum type with constant-specific method implementations: {@link chapter06.item30.Operation}
  */
 package chapter06.item30;
