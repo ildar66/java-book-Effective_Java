@@ -15,6 +15,27 @@
  * *
  * Enum type with constant-specific method implementations: {@link chapter06.item30.Operation}.
  * *
- * The strategy enum pattern: {@link chapter06.item30.PayrollDay}
+ * The strategy enum pattern: {@link chapter06.item30.PayrollDay}.
+ * *
+ * Switches on enums are good for augmenting external enum types with constant-specific behavior.
+ * For example, suppose the Operation enum is not under your control, and you wish it had an instance method
+ * to return the inverse of each operation. You can simulate the effect with the following static method:
+ * // Switch on an enum to simulate a missing method
+ * public static Operation inverse(Operation op) {
+ *  switch(op) {
+ *      case PLUS: return Operation.MINUS;
+ *      case MINUS: return Operation.PLUS;
+ *      case TIMES: return Operation.DIVIDE;
+ *      case DIVIDE: return Operation.TIMES;
+ *      default: throw new AssertionError("Unknown op: " + op);
+ *  }
+ * }
+ **
+    In summary, the advantages of enum types over int constants are compelling.
+    Enums are far more readable, safer, and more powerful. Many enums require no explicit constructors or members,
+    but many others benefit from associating data with each constant and providing methods whose behavior is affected by this data.
+    Far fewer enums benefit from associating multiple behaviors with a single method.
+    In this relatively rare case, prefer constant-specific methods to enums that switch on their own values.
+    Consider the strategy enum pattern if multiple enum constants share common behaviors.
  */
 package chapter06.item30;
