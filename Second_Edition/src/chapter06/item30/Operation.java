@@ -3,7 +3,9 @@ package chapter06.item30;
 
 import java.util.HashMap;
 import java.util.Map;
-// Enum type with constant-specific method implementations
+
+// Enum type with constant-specific method implementations.
+// Enum type with constant-specific class bodies and data.
 public enum Operation {
     PLUS("+") {
         double apply(double x, double y) {
@@ -53,8 +55,8 @@ public enum Operation {
 
     // Test program to perform all operations on given operands
     public static void main(String[] args) {
-        double x = Double.parseDouble(args[0]);
-        double y = Double.parseDouble(args[1]);
+        double x = 2; //Double.parseDouble(args[0]);
+        double y = 4; //Double.parseDouble(args[1]);
         for (Operation op : Operation.values())
             System.out.printf("%f %s %f = %f%n", x, op, y, op.apply(x, y));
     }
