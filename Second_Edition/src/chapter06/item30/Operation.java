@@ -4,8 +4,6 @@ package chapter06.item30;
 import java.util.HashMap;
 import java.util.Map;
 
-// Enum type with constant-specific method implementations.
-// Enum type with constant-specific class bodies and data.
 public enum Operation {
     PLUS("+") {
         double apply(double x, double y) {
