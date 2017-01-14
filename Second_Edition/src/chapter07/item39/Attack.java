@@ -13,11 +13,11 @@ public class Attack {
         end.setYear(78); // Modifies internals of p!
         System.out.println(p);
 
-    /*    // Second attack on the internals of a Period instance - Page 186
+        // Second attack on the internals of a Period instance - Page 186
         start = new Date();
         end = new Date();
         p = new Period(start, end);
         p.end().setYear(78); // Modifies internals of p!
-        System.out.println(p);*/
+        System.out.println(p);
     }
 }

@@ -21,15 +21,16 @@ public final class Period {
         this.end = end;
     }
 
+    /*
     // Repaired constructor - makes defensive copies of parameters - Page 185
     // Stops first attack
-    // public Period(Date start, Date end) {
-    // this.start = new Date(start.getTime());
-    // this.end = new Date(end.getTime());
-    //
-    // if (this.start.compareTo(this.end) > 0)
-    // throw new IllegalArgumentException(start +" after "+ end);
-    // }
+    public Period(Date start, Date end) {
+        this.start = new Date(start.getTime());
+        this.end = new Date(end.getTime());
+
+        if (this.start.compareTo(this.end) > 0)
+            throw new IllegalArgumentException(start + " after " + end);
+    }*/
 
     public Date start() {
         return start;
@@ -39,15 +40,15 @@ public final class Period {
         return end;
     }
 
-    // Repaired accessors - make defensive copies of internal fields - Page 186
-    // Stops second attack
-    // public Date start() {
-    // return new Date(start.getTime());
-    // }
-    //
-    // public Date end() {
-    // return new Date(end.getTime());
-    // }
+    /*//Repaired accessors - make defensive copies of internal fields - Page 186
+    //Stops second attack
+    public Date start() {
+        return new Date(start.getTime());
+    }
+
+    public Date end() {
+        return new Date(end.getTime());
+    }*/
 
     public String toString() {
         return start + " - " + end;
