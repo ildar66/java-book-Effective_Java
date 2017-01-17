@@ -1,6 +1,8 @@
 // Sample uses of varargs
 package chapter07.item42;
 
+import java.util.Arrays;
+
 public class Varargs {
 
     // Simple use of varargs - Page 197
@@ -34,5 +36,15 @@ public class Varargs {
     public static void main(String[] args) {
         System.out.println(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
         System.out.println(min(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+        String[] homophones = {"to", "too", "two"};
+        // Obsolete idiom to print an array!
+        System.out.println(Arrays.asList(homophones));
+
+        int[] digits = {3, 1, 4, 1, 5, 9, 2, 6, 5, 4};
+        // System.out.println(Arrays.asList(digits));
+        // The right way to print an array:
+        System.out.println(Arrays.toString(digits));
+
     }
 }
