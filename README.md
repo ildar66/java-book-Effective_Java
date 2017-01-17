@@ -43,3 +43,11 @@ Effective Java(customary and effective usage):
         Item 35: Prefer annotations to naming patterns.
         Item 36: Consistently use the Override annotation.
         Item 37: Use marker interfaces to define types.
+    7 Methods (chapter07):
+         Item 38: Check parameters for validity.
+         Item 39: Make defensive copies when needed.
+         Item 40: Design method signatures carefully.
+         Item 41: Use overloading judiciously .
+         Item 42: Use varargs judiciously.
+         Item 43: Return empty arrays or collections, not nulls.
+         Item 44: Write doc comments for all exposed API elements.
