@@ -37,6 +37,13 @@ public class NestedIteration {
             for (Iterator<Rank> j = ranks.iterator(); j.hasNext(); )
                 deck.add(new Card(i.next(), j.next()));
 
+        /*// Fixed, but ugly - you can do better!
+        for (Iterator<Suit> i = suits.iterator(); i.hasNext(); ) {
+            Suit suit = i.next();
+            for (Iterator<Rank> j = ranks.iterator(); j.hasNext(); )
+                deck.add(new Card(suit, j.next()));
+        }*/
+
         /*//Preferred idiom for nested iteration on collections and arrays
         for (Suit suit : suits)
             for (Rank rank : ranks)
