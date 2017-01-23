@@ -12,5 +12,10 @@
  * *
  * You can obtain many of the benefits of reflection while incurring few of its costs by using it only in a very limited form.
  * You can create instances reflectively and access them normally via their interface or superclass: {@link chapter08.item53.MakeSet}.
+ * *
+ * In summary,
+ * reflection is a powerful facility that is required for certain sophisticated system programming tasks, but it has many disadvantages.
+ * If you are writing a program that has to work with classes unknown at compile time, you should, if at all possible,
+ * use reflection only to instantiate objects, and access the objects using some interface or superclass that is known at compile time.
  */
 package chapter08.item53;
