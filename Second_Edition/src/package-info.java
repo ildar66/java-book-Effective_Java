@@ -52,5 +52,17 @@ Effective Java(customary and effective usage):
          Item 42: Use varargs judiciously.
          Item 43: Return empty arrays or collections, not nulls.
          Item 44: Write doc comments for all exposed API elements.
-
+     8 General Programming ({@link chapter08}):
+         Item 45: Minimize the scope of local variables.
+         Item 46: Prefer for-each loops to traditional for loops.
+         Item 47: Know and use the libraries.
+         Item 48: Avoid float and double if exact answers are required.
+         Item 49: Prefer primitive types to boxed primitives.
+         Item 50: Avoid strings where other types are more appropriate.
+         Item 51: Beware the performance of string concatenation.
+         Item 52: Refer to objects by their interfaces.
+         Item 53: Prefer interfaces to reflection.
+         Item 54: Use native methods judiciously.
+         Item 55: Optimize judiciously.
+         Item 56: Adhere to generally accepted naming conventions.
  */
