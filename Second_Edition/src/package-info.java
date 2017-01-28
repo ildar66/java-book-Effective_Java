@@ -65,4 +65,14 @@ Effective Java(customary and effective usage):
          Item 54: Use native methods judiciously.
          Item 55: Optimize judiciously.
          Item 56: Adhere to generally accepted naming conventions.
+    9 Exceptions ({@link chapter09}):
+         Item 57: Use exceptions only for exceptional conditions.
+         Item 58: Use checked exceptions for recoverable conditions and runtime exceptions for programming errors.
+         Item 59: Avoid unnecessary use of checked exceptions.
+         Item 60: Favor the use of standard exceptions.
+         Item 61: Throw exceptions appropriate to the abstraction.
+         Item 62: Document all exceptions thrown by each method.
+         Item 63: Include failure-capture information in detail messages.
+         Item 64: Strive for failure atomicity.
+         Item 65: Don’t ignore exceptions.
  */
