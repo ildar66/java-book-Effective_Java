@@ -12,6 +12,15 @@ public class StopThread {
         Thread backgroundThread = new Thread(new Runnable() {
 
             public void run() {
+             /* In the absence of synchronization, it’s quite acceptable for the virtual machine to transform this code:
+                while (!done)
+                    i++;
+                into this code:
+                if (!done)
+                    while (true)
+                        i++;
+                This optimization is known as hoisting,
+             */
                 int i = 0;
                 while (!stopRequested)
                     i++;

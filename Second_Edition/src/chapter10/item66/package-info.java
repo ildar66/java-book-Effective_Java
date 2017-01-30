@@ -6,5 +6,7 @@
  * Do not use Thread.stop.
  * *
  * Broken {@link chapter10.item66.brokenstopthread.StopThread}
+ * *
+ * One way to fix the problem is to synchronize access to the stopRequested field: {@link chapter10.item66.fixedstopthread1.StopThread}
  */
 package chapter10.item66;
