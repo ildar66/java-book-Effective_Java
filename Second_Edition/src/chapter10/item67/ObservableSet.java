@@ -27,15 +27,15 @@ public class ObservableSet<E> extends ForwardingSet<E> {
     }
 
     // This method is the culprit
-   /* private void notifyElementAdded(E element) {
+    private void notifyElementAdded(E element) {
         synchronized (observers) {
             for (SetObserver<E> observer : observers)
                 observer.added(this, element);
         }
-    }*/
+    }
 
     // Alien method moved outside of synchronized block - open calls - Page 268
-    private void notifyElementAdded(E element) {
+    private void notifyElementAdded_0(E element) {
         List<SetObserver<E>> snapshot = null;
         synchronized (observers) {
             snapshot = new ArrayList<SetObserver<E>>(observers);
@@ -46,19 +46,18 @@ public class ObservableSet<E> extends ForwardingSet<E> {
 
     // Thread-safe observable set with CopyOnWriteArrayList - Page 269
     //
-    // private final List<SetObserver<E>> observers =
-    // new CopyOnWriteArrayList<SetObserver<E>>();
-    //
-    // public void addObserver(SetObserver<E> observer) {
-    // observers.add(observer);
-    // }
-    // public boolean removeObserver(SetObserver<E> observer) {
-    // return observers.remove(observer);
-    // }
-    // private void notifyElementAdded(E element) {
-    // for (SetObserver<E> observer : observers)
-    // observer.added(this, element);
-    // }
+    /* private final List<SetObserver<E>> observers = new CopyOnWriteArrayList<SetObserver<E>>();
+
+     public void addObserver(SetObserver<E> observer) {
+        observers.add(observer);
+     }
+     public boolean removeObserver(SetObserver<E> observer) {
+        return observers.remove(observer);
+     }
+     private void notifyElementAdded(E element) {
+        for (SetObserver<E> observer : observers)
+            observer.added(this, element);
+     }*/
 
     @Override
     public boolean add(E element) {

@@ -9,5 +9,8 @@
  * @see chapter10.item67.Test2
  * @see chapter10.item67.Test3
  * *
+ * Alien method moved outside of synchronized block - open calls {@link chapter10.item67.ObservableSet#notifyElementAdded_0(java.lang.Object)}.
+ * *
+ * Thread-safe observable set with CopyOnWriteArrayList: {@link chapter10.item67.ObservableSet}}(commented).
  */
 package chapter10.item67;
