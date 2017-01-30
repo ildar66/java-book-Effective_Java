@@ -27,22 +27,22 @@ public class ObservableSet<E> extends ForwardingSet<E> {
     }
 
     // This method is the culprit
-    private void notifyElementAdded(E element) {
+   /* private void notifyElementAdded(E element) {
         synchronized (observers) {
             for (SetObserver<E> observer : observers)
                 observer.added(this, element);
         }
-    }
+    }*/
 
     // Alien method moved outside of synchronized block - open calls - Page 268
-    // private void notifyElementAdded(E element) {
-    // List<SetObserver<E>> snapshot = null;
-    // synchronized(observers) {
-    // snapshot = new ArrayList<SetObserver<E>>(observers);
-    // }
-    // for (SetObserver<E> observer : snapshot)
-    // observer.added(this, element);
-    // }
+    private void notifyElementAdded(E element) {
+        List<SetObserver<E>> snapshot = null;
+        synchronized (observers) {
+            snapshot = new ArrayList<SetObserver<E>>(observers);
+        }
+        for (SetObserver<E> observer : snapshot)
+            observer.added(this, element);
+    }
 
     // Thread-safe observable set with CopyOnWriteArrayList - Page 269
     //
