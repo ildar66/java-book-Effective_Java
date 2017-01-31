@@ -15,6 +15,7 @@ public class Intern {
     }*/
 
     // Concurrent canonicalizing map atop ConcurrentMap - faster! - Page 274
+    // ConcurrentHashMap is optimized for retrieval operations, such as get.
     public static String intern(String s) {
         String result = map.get(s);
         if (result == null) {
