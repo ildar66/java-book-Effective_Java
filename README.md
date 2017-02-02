@@ -74,3 +74,12 @@ Effective Java(customary and effective usage):
         Item 63: Include failure-capture information in detail messages.
         Item 64: Strive for failure atomicity.
         Item 65: Don’t ignore exceptions.
+    10 Concurrency (chapter10):
+        Item 66: Synchronize access to shared mutable data.
+        Item 67: Avoid excessive synchronization.
+        Item 68: Prefer executors and tasks to threads.
+        Item 69: Prefer concurrency utilities to wait and notify.
+        Item 70: Document thread safety.
+        Item 71: Use lazy initialization judiciously.
+        Item 72: Don’t depend on the thread scheduler.
+        Item 73: Avoid thread groups.
