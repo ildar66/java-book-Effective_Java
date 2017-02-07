@@ -84,4 +84,10 @@ Effective Java(customary and effective usage):
          Item 71: Use lazy initialization judiciously.
          Item 72: Don’t depend on the thread scheduler.
          Item 73: Avoid thread groups.
+    11 Serialization({@link chapter11}):
+         Item 74: Implement Serializable judiciously.
+         Item 75: Consider using a custom serialized form.
+         Item 76: Write readObject methods defensively.
+         Item 77: For instance control, prefer enum types to readResolve.
+         Item 78: Consider serialization proxies instead of serialized instances.
  */
